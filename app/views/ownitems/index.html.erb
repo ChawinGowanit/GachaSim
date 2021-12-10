@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ownitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Item</th>
+      <th>Sellstatus</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ownitems.each do |ownitem| %>
+      <tr>
+        <td><%= ownitem.user_id %></td>
+        <td><%= ownitem.item_id %></td>
+        <td><%= ownitem.sellstatus %></td>
+        <td><%= ownitem.price %></td>
+        <td><%= link_to 'Show', ownitem %></td>
+        <td><%= link_to 'Edit', edit_ownitem_path(ownitem) %></td>
+        <td><%= link_to 'Destroy', ownitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ownitem', new_ownitem_path %>

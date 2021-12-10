@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  item: one
+  sellstatus: false
+  price: 6000
+
+two:
+  user: one
+  item: two
+  sellstatus: false
+  price: 600
+
+three:
+  user: one
+  item: three
+  sellstatus: false
+  price: 60
+
+

@@ -1,0 +1,30 @@
+= render 'layouts/navigation'
+
+%p#notice.fs-4.mt-3= notice
+%p#alert.fs-4.mt-3.text-danger= alert
+%div.d-flex.mb-2
+
+	%h1.w-100 Sell items
+	%button.btn.btn-warning.marketRule.ml-auto{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal"} Rule
+
+= render 'marketRule'
+%table.table.mt-5
+	%thead
+		%tr
+			%th.fs-4.d-flex.justify-content-center{:scope => "col"} Item
+			%th.fs-4{:scope => "col"} Item name
+			%th.fs-4{:scope => "col"} Rarity
+			%th.fs-4{:scope => "col"} Sell
+
+
+	%tbody
+		- @sellitem.each do |item|
+
+			%tr.fs-4
+				%td.align-middle.fs-4.d-flex.justify-content-center{:scope => "row"} 
+					= image_tag("#{item[4]}",:size => "202x228")
+				%th.align-middle.fs-4 #{item[2]}
+
+				%td.align-middle.fs-4 #{item[3]}
+				%td.align-middle.fs-4
+					= button_to 'buy', '/buy', params: {id: item[5]}, class: 'btn btn-lg btn-success'

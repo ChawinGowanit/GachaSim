@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Banner:</strong>
+  <%= @banneritem.banner_id %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @banneritem.item_id %>
+</p>
+
+<%= link_to 'Edit', edit_banneritem_path(@banneritem) %> |
+<%= link_to 'Back', banneritems_path %>

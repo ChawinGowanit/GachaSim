@@ -1,0 +1,2 @@
+module RedeemcodesHelper
+end

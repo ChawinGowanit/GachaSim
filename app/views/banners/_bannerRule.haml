@@ -1,0 +1,43 @@
+#bannerRuleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "A", :tabindex => "-1"}
+	.modal-dialog.bg-light
+		.modal-content
+			.modal-header
+				%h5#A.modal-title Rules
+				%button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+		#body.modal-body
+			1. Each banner contain the following rarity and rate
+			%table.table
+				%thead
+					%tr
+						%th{:scope => "col"} Rarity
+						%th{:scope => "col"} Rate
+
+				%tbody
+					%tr
+						%th{:scope => "row"} SSR
+						%td 2.5%
+					%tr
+						%th{:scope => "row"} SR
+						%td 18.5%
+					%tr
+						%th{:scope => "row"} R
+						%td 79%
+			2. Item you gain from each rarity will randomly appear
+			%br
+			For example: if in the banner contain 44 SSR items 
+			%br
+			chance of apperance of each item is 2.5 / 44 =  0.056818181%
+			%br
+			3. Each pull use 120 credit you can choose to pull 1 items or pull 10 items
+			%br
+			4. After pull items will send to your inventory
+
+
+		.modal-footer
+			%button.btn.btn-danger.btn-lg{"data-bs-dismiss" => "modal", :type => "button"} Close
+
+:javascript
+	$(".bannerRule").click(function(){
+		var ruleModal = new bootstrap.Modal(document.getElementById('bannerRuleModal'), {})
+		ruleModal.show();
+	})

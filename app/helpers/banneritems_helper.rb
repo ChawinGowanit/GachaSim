@@ -1,0 +1,2 @@
+module BanneritemsHelper
+end

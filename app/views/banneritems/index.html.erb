@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Banneritems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Banner</th>
+      <th>Item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @banneritems.each do |banneritem| %>
+      <tr>
+        <td><%= banneritem.banner_id %></td>
+        <td><%= banneritem.item_id %></td>
+        <td><%= link_to 'Show', banneritem %></td>
+        <td><%= link_to 'Edit', edit_banneritem_path(banneritem) %></td>
+        <td><%= link_to 'Destroy', banneritem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Banneritem', new_banneritem_path %>

@@ -1,0 +1,12 @@
+= simple_form_for @redeemcode do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :code
+    = f.input :creditAmount
+    = f.hidden_field  :status
+
+
+  .form-actions
+    = f.button :submit ,class: 'btn btn-outline-dark mt-2'

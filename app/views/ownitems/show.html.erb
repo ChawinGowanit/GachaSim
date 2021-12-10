@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @ownitem.user_id %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @ownitem.item_id %>
+</p>
+
+<p>
+  <strong>Sellstatus:</strong>
+  <%= @ownitem.sellstatus %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ownitem.price %>
+</p>
+
+<%= link_to 'Edit', edit_ownitem_path(@ownitem) %> |
+<%= link_to 'Back', ownitems_path %>

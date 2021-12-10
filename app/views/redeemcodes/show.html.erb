@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @redeemcode.code %>
+</p>
+
+<p>
+  <strong>Creditamount:</strong>
+  <%= @redeemcode.creditAmount %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @redeemcode.status %>
+</p>
+
+<%= link_to 'Edit', edit_redeemcode_path(@redeemcode) %> |
+<%= link_to 'Back', redeemcodes_path %>

@@ -1,0 +1,16 @@
+.container.d-flex.flex-column.align-items-center
+  %h1.mt-5 Welcome to Gacha Simulator
+
+  %p#alert= alert
+  = simple_form_for(@user, :url => check_path, :method => :post) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+    .form-inputs
+      = f.input :username
+      = f.input :password
+
+
+    .form-actions.text-center
+      = f.submit 'Login' , class: 'btn btn-outline-dark mt-2'
+      = f.submit 'Register', class: 'btn btn-outline-dark mt-2'

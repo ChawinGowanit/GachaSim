@@ -1,0 +1,37 @@
+#marketRuleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "A", :tabindex => "-1"}
+	.modal-dialog.bg-light
+		.modal-content
+			.modal-header
+				%h5#A.modal-title Rules
+				%button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+		#body.modal-body
+			1. You can sell item and recieve credit base on item's rarity
+			%table.table
+				%thead
+					%tr
+						%th{:scope => "col"} Rarity
+						%th{:scope => "col"} Price
+
+				%tbody
+					%tr
+						%th{:scope => "row"} SSR
+						%td 6000 credit
+					%tr
+						%th{:scope => "row"} SR
+						%td 600 credit
+					%tr
+						%th{:scope => "row"} R
+						%td 60 credit
+			%br
+			2. You can cancel the selling status anytime before the item is sold
+			%br
+			3. After buy the item will send to your inventory
+
+		.modal-footer
+			%button.btn.btn-danger.btn-lg{"data-bs-dismiss" => "modal", :type => "button"} Close
+
+:javascript
+	$(".marketRule").click(function(){
+		var ruleModal = new bootstrap.Modal(document.getElementById('marketRuleModal'), {})
+		ruleModal.show();
+	})

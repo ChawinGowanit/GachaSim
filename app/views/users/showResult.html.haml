@@ -1,0 +1,31 @@
+= render 'layouts/navigation'
+
+%p#notice.fs-4.mt-3= notice
+%p#alert.fs-4.mt-3.text-danger= alert
+
+- @items = session[:item]
+
+%h3.font-weight-bold.mt-5.text-center Item Recieved
+%table.table.mt-3
+	%thead
+		%tr
+			%th.fs-4.d-flex.justify-content-center{:scope => "col"} Item
+			%th.fs-4{:scope => "col"} Item name
+			%th.fs-4{:scope => "col"} Rarity
+
+
+	%tbody
+		- @items.each do |item|
+			%tr.fs-4
+				%td.align-middle.fs-4.d-flex.justify-content-center{:scope => "row"} 
+					= image_tag("#{item[0][3]}",:size => "50x57")
+				%th.align-middle.fs-4 #{item[0][1]}
+				%td.align-middle.fs-4 #{item[0][2]}
+
+
+%div.d-flex
+	%div.w-100
+		= link_to 'Back', "/banners/#{params[:id]}", class: 'btn btn-outline-dark btn-lg '
+	= link_to 'Inventory', "/inventory", class: 'btn btn-outline-success btn-lg'
+
+

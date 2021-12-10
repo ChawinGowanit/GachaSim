@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  itemname: Aru
+  rarity: SSR
+  item_img_url: "Aru.png"
+
+two:
+  itemname: Chise
+  rarity: SR
+  item_img_url: "Chise.png"
+  
+three:
+  itemname: Serina
+  rarity: R
+  item_img_url: "Serina.png"

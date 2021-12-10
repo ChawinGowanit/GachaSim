@@ -1,0 +1,63 @@
+= render 'layouts/navigation'
+%p#notice.fs-4.mt-3= notice
+%p#alert.fs-4.mt-3.text-danger= alert
+%h1.mt-5.text-center  total credit : #{(User.find(session[:user_id])).credit}
+
+%p.fs-4.mt-5 Enter code to redeem credit
+
+= simple_form_for(@redeemcode, :url => redeem_path, :method => :post) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :code
+
+  .form-actions.text-end
+    = f.submit 'Redeem', class: 'btn btn-outline-dark mt-2'
+%p.mt-5.fs-4 Redeem Log
+%table.table.mt-2
+  %thead
+    %tr
+      %th.fs-5{:scope => "col"} Code
+      %th.fs-5{:scope => "col"} Credit Amount
+      %th.fs-5{:scope => "col"} Redeemed At
+
+
+  %tbody
+    - @redeemLog.each do |item|
+
+      %tr
+        %td.fs-5{:scope => "row"}  #{item[1]}
+        %td.fs-5 #{item[0]}
+        %td.fs-5 #{item[2]}
+
+%p.mt-5.fs-4 Sell Log
+%table.table.mt-2
+  %thead
+    %tr
+      %th.fs-5{:scope => "col"} Credit Amount
+      %th.fs-5{:scope => "col"} Sell At
+
+
+  %tbody
+    - @sellLog.each do |item|
+
+      %tr
+        %td.fs-5{:scope => "row"}  #{item[0]}
+        %td.fs-5 #{item[1]}
+
+
+%p.mt-5.fs-4 Buy Log
+%table.table.mt-2
+  %thead
+    %tr
+      %th.fs-5{:scope => "col"} Credit Amount
+      %th.fs-5{:scope => "col"} Buy At
+
+
+  %tbody
+    - @buyLog.each do |item|
+
+      %tr
+        %td.fs-5{:scope => "row"}  #{item[0]}
+        %td.fs-5 #{item[1]}

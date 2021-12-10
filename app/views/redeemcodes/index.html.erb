@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Redeemcodes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Creditamount</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redeemcodes.each do |redeemcode| %>
+      <tr>
+        <td><%= redeemcode.code %></td>
+        <td><%= redeemcode.creditAmount %></td>
+        <td><%= redeemcode.status %></td>
+        <td><%= link_to 'Show', redeemcode %></td>
+        <td><%= link_to 'Edit', edit_redeemcode_path(redeemcode) %></td>
+        <td><%= link_to 'Destroy', redeemcode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Redeemcode', new_redeemcode_path %>

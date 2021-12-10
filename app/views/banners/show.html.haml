@@ -1,0 +1,19 @@
+= render 'layouts/navigation'
+%p#notice.fs-4.mt-3= notice
+%p#alert.fs-4.mt-3.text-danger= alert
+
+%h1 #{@banner.bannername}
+
+%h2.text-center SSR included in this banner
+.d-flex.text-center.mt-3.justify-content-center
+	- @bPic.each do |item|
+		= image_tag "#{item[1]}"
+
+%br
+
+.d-flex.text-center.mt-3.justify-content-center
+	%button.btn.btn-outline-dark.xyz{"data-bs-target" => "#exampleModal#{@bItem}", "data-bs-toggle" => "modal", "data-item" => @bItem} See Rate
+	= render 'rateModal'
+	= button_to 'Pull','/pull', params: {banner_id: @banner.id}, class: 'btn btn-outline-dark btn-lg'
+	= button_to 'Pullx10','/pullx10', params: {banner_id: @banner.id}, class: 'btn btn-outline-dark btn-lg'
+	= link_to 'Back', banners_path , class: 'btn btn-outline-dark btn-lg'

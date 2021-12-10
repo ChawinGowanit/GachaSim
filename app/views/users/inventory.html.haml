@@ -1,0 +1,29 @@
+= render 'layouts/navigation'
+
+
+%h1.mt-3 Inventory
+%table.table.mt-5
+	%thead
+		%tr
+			%th.fs-4.d-flex.justify-content-center{:scope => "col"} Item
+			%th.fs-4{:scope => "col"} Item name
+			%th.fs-4{:scope => "col"} Rarity
+			%th.fs-4{:scope => "col"} Sell
+
+
+	%tbody
+		- @ownitem.each do |item|
+
+			%tr.fs-4
+				%td.align-middle.fs-4.d-flex.justify-content-center{:scope => "row"} 
+					= image_tag("#{item[4]}",:size => "202x228")
+				%th.align-middle.fs-4 #{item[2]}
+
+				%td.align-middle.fs-4 #{item[3]}
+				%td.align-middle.fs-4
+					- if !(item[0])
+						= button_to 'sell', '/sell', params: {id: item[5]}, class: 'btn btn-lg btn-danger'
+					- else
+						= button_to 'cancel', '/cancel', params: {id: item[5]}, class: 'btn btn-lg btn-outline-danger'
+
+

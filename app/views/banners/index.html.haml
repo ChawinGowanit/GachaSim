@@ -1,0 +1,28 @@
+= render 'layouts/navigation'
+
+%p#notice.fs-4.mt-3= notice
+%p#alert.fs-4.mt-3.text-danger= alert
+%div.d-flex.mb-2
+
+  %h1.w-100 Banners
+  %button.btn.btn-warning.bannerRule.ml-auto{"data-bs-target" => "#exampleModal", "data-bs-toggle" => "modal"} Rule
+
+= render 'bannerRule'
+
+.container
+  .row
+    .col
+      -@banners.each do |banner|
+        .col
+          .d-flex.p-2.border.border-dark.rounded.mt-3
+            .col
+              %h3 #{banner.bannername}
+              %p.mt-2.fs-6 total like : #{banner.likes.length}
+            - if Like.find_by(banner_id: banner.id,user_id: session[:user_id]) == nil
+              = button_to 'Like', '/like', params: {banner_id: banner.id}, class: 'btn btn-primary btn-lg'
+            - else
+              = button_to 'Unlike', '/unlike', params: {banner_id: banner.id}, class: 'btn btn-outline-primary btn-lg'
+            .d
+              = link_to 'Show', banner, class: 'btn btn-outline-info btn-lg '
+            
+
