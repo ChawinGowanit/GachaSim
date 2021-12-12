@@ -12,3 +12,5 @@
       &emsp;&emsp; 3.redeemcode3 <br />
       &emsp;&emsp; 4.redeemcode4 <br />
       &emsp;&emsp; 5.redeemcode5 <br />
+      &emsp;&emsp; each redeemcode give 12000 credit
+# Main_test is used to test the system
