@@ -2,7 +2,7 @@
 # GachaSim
 
 # Gacha_DB.sql is Defualt databases for the website 
-run the following code to dumped Gacha_DB.sql into you database
+run the following code to dumped Gacha_DB.sql into you database <br />
 ``` create database [database_name] ``` <br />
 ``` mysql -u [user] -p [database_name] < Gacha_DB.sql ```
   Gacha_DB.sql have the following data <br />
