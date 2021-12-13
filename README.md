@@ -1,7 +1,10 @@
 
 # GachaSim
 
-# Gacha_DB.sql is Defualt databases for the website
+# Gacha_DB.sql is Defualt databases for the website 
+run the following code to dumped Gacha_DB.sql into you database
+``` create database [database_name] ```
+``` mysql -u [user] -p [database_name] < Gacha_DB.sql ```
   Gacha_DB.sql have the following data <br />
     &emsp; 1. 1 banner name "Blue Archive" <br />
     &emsp; 2. items have all SSR SR R rarity with item name and image_url <br />
