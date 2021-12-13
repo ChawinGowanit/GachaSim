@@ -15,7 +15,7 @@ run the following code to dumped Gacha_DB.sql into you database <br />
       &emsp;&emsp; 3.redeemcode3 <br />
       &emsp;&emsp; 4.redeemcode4 <br />
       &emsp;&emsp; 5.redeemcode5 <br />
-      &emsp;&emsp; each redeemcode give 12000 credit
+      &emsp;&emsp; each redeemcode give 12000 credit <br />
 :warning: ** banners , items ,banneritems can be inserted directly in mysql**
 
 # to test the system run the following code <br /> 
