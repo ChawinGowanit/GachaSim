@@ -125,11 +125,10 @@ class UsersController < ApplicationController
     @banner_id = params[:banner_id]
     @user = User.find(session[:user_id])
     session[:item] = [@user.pull(@banner_id)]
-    if !session[:item]
+    if !session[:item][0]
       redirect_to "/banners/#{params[:banner_id]}", alert: "Not enough credit."
     else
       redirect_to showResult_path(id: @banner_id)
-
     end
   end
 
