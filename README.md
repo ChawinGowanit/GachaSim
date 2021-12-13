@@ -3,7 +3,7 @@
 
 # Gacha_DB.sql is Defualt databases for the website 
 run the following code to dumped Gacha_DB.sql into you database <br />
-``` create database [database_name] ``` <br />
+``` create database [database_name] ``` recommend to be a website's development database<br /> 
 ``` mysql -u [user] -p [database_name] < Gacha_DB.sql ``` <br />
   Gacha_DB.sql have the following data <br />
     &emsp; 1. 1 banner name "Blue Archive" <br />
@@ -16,5 +16,7 @@ run the following code to dumped Gacha_DB.sql into you database <br />
       &emsp;&emsp; 4.redeemcode4 <br />
       &emsp;&emsp; 5.redeemcode5 <br />
       &emsp;&emsp; each redeemcode give 12000 credit
+:warning: ** banners , items ,banneritems can be inserted directly in mysql**
+
 # to test the system run the following code <br /> 
 ```ruby rails test:system ```<br /> 
