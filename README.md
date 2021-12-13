@@ -13,4 +13,4 @@
       &emsp;&emsp; 4.redeemcode4 <br />
       &emsp;&emsp; 5.redeemcode5 <br />
       &emsp;&emsp; each redeemcode give 12000 credit
-# /test/system/main_test is used to test the system
+# run ```ruby rails test:system ``` to test to system
